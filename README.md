@@ -1,6 +1,6 @@
 # Hidden Markov Models for Bioinformatics
 
-Two research-style notebooks exploring hidden Markov models for biological sequence analysis.
+Two notebooks exploring hidden Markov models for biological sequence analysis.
 
 ## Included studies
 
