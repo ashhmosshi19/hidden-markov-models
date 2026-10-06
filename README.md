@@ -1,22 +1,36 @@
-# Hidden Markov Models for Bioinformatics
+# Hidden Markov Models: Bioinformatics and Saga
 
-Two notebooks exploring hidden Markov models for biological sequence analysis.
+A practical HMM portfolio covering the core algorithms and two application tracks: biological sequence modeling and the Saga project exercises.
 
-## Included studies
+## Repository map
 
-- `periodic_patterns_exons_introns.ipynb`: IID, Markov, periodic, and flexible-wheel models for nucleotide periodicity in exon/intron sequences, including validation, bootstrap, and model comparison.
-- `gene_finding_hmm_tutorial_vi.ipynb`: a Vietnamese tutorial implementing synthetic gene finding, Viterbi decoding, and sequence-label evaluation.
+### `notebooks/saga/`
+
+Step-by-step implementations of:
+
+- sequence likelihood with the forward algorithm;
+- Viterbi decoding and backpointers;
+- forward–backward quantities;
+- Baum–Welch-style parameter updates and HMM training;
+- a compact end-to-end HMM implementation.
+
+### `notebooks/bioinformatics/`
+
+Research-style notebooks for:
+
+- periodic nucleotide patterns in exon/intron sequences;
+- synthetic gene finding with HMMs and Viterbi decoding.
 
 ## Result snapshots
 
-The periodicity study selected a period-10 model and reports an improvement of 0.116432 NLL/nt over the IID baseline on its evaluation setup. The tutorial records F1 scores of approximately 0.978 for coding, 0.971 for intergenic, 0.942 for intron, and 0.877 for splice-signal labels.
+The bioinformatics work selected a period-10 model and reported a 0.116432 NLL/nt improvement over an IID baseline in its evaluation setup. The gene-finding tutorial recorded F1 scores of approximately 0.978 for coding, 0.971 for intergenic, 0.942 for intron, and 0.877 for splice-signal labels.
 
-The results depend on the downloaded sequence sources and synthetic-data configuration. Raw genomic data and generated outputs are intentionally not committed.
+The Saga notebooks use a small weather-style toy sequence to make each dynamic-programming step inspectable. Their purpose is algorithmic clarity and transfer to the Saga task, not a production benchmark.
 
 ## Reproduce
-
-Open the notebooks in Jupyter and follow the data-download cells. The periodicity notebook may require `pyfaidx` and common scientific Python packages:
 
 ```bash
 python -m pip install jupyter numpy pandas scipy scikit-learn matplotlib pyfaidx
 ```
+
+Open the notebooks in Jupyter or Google Colab. The bioinformatics notebooks may download sequence data on demand; raw genomic data and generated outputs are intentionally not committed.
